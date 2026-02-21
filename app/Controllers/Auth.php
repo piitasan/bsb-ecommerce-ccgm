@@ -25,9 +25,12 @@ class Auth extends BaseController
 
         if ($user && password_verify($this->request->getPost('password'), $user['password'])) {
             session()->set([
-                'user_id'   => $user['user_id'],
-                'user_name' => $user['user_name'],
-                'logged_in' => true
+                'user_id'    => $user['user_id'],
+                'user_name'  => $user['user_name'],
+                'first_name' => $user['first_name'],
+                'last_name'  => $user['last_name'],
+                'email'      => $user['email'],
+                'logged_in'  => true
             ]);
             return redirect()->to('/');
         } 

@@ -11,3 +11,5 @@ $routes->get('bsb_signup', 'Auth::signup');
 $routes->post('bsb_signin', 'Auth::processSignin');
 $routes->post('bsb_signup', 'Auth::processSignup');
 $routes->get('signout', 'Auth::signout');
+$routes->get('profile', 'Profile::index');
+$routes->get('history', 'History::index');
