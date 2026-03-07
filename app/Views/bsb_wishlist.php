@@ -132,22 +132,23 @@ function addToCart(productId) {
     fetch('<?= base_url('cart/add') ?>', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
-            'X-Requested-With': 'XMLHttpRequest'
+            'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: JSON.stringify({
-            product_id: productId,
-            quantity: 1
-        })
+        body: 'product_id=' + productId + '&quantity=1'
     })
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            alert('Added to cart!');
+            alert(data.message);
+            // Optionally redirect to cart
+            // window.location.href = '<?= base_url('cart') ?>';
         } else {
             alert(data.message);
         }
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+    });
 }
 </script>

@@ -20,6 +20,13 @@ $routes->post('wishlist/add/(:num)', 'Wishlist::add/$1');
 $routes->get('wishlist/remove/(:num)', 'Wishlist::remove/$1');
 $routes->post('wishlist/toggle', 'Wishlist::toggle');
 
+$routes->get('cart', 'Cart::index');
+$routes->post('cart/add', 'Cart::add');
+$routes->post('cart/update-quantity', 'Cart::updateQuantity');
+$routes->get('cart/remove/(:num)', 'Cart::remove/$1');
+$routes->get('cart/clear', 'Cart::clear');
+$routes->get('cart/count', 'Cart::count');
+
 $routes->get('payment-method', 'PaymentMethod::index');
 $routes->post('payment-method/add', 'PaymentMethod::add');
 $routes->get('payment-method/delete/(:num)', 'PaymentMethod::delete/$1');

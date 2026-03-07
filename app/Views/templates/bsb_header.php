@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="<?= base_url() ?>">
     <title><?= isset($title) ? $title . ' - BSB' : 'BSB E-Commerce' ?></title>
     
     <!-- Bootstrap 5 CSS -->
@@ -38,8 +39,11 @@
             <a href="<?= base_url('wishlist') ?>" class="mx-2">
                 <i class="bi bi-heart-fill" style="color: #8B4513; font-size: 1.8rem;"></i>
             </a>
-            <a href="<?= base_url('cart') ?>" class="mx-2">
+            <a href="<?= base_url('cart') ?>" class="mx-2 position-relative">
                 <i class="bi bi-cart-fill" style="color: #8B4513; font-size: 1.8rem;"></i>
+                <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none; font-size: 0.7rem;">
+                    0
+                </span>
             </a>
 
             <!-- Login/Signup or Profile -->
